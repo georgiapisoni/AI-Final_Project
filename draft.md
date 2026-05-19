@@ -14,7 +14,7 @@ Different forms of movie success:
 
 ## 3. Sub-questions
 
-### 3.1 Commercial and financial success 
+### 3.1 Commercial and financial success
 
 - Do higher-budget movies generate higher revenue?
 - Which movies generate the highest profit?
@@ -57,100 +57,21 @@ https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies
 ## Project steps
 ## 1. Code
 ### 1.1 Data loading
-- Load w/ pandas.
-- Inspect number of rows and columns.
-- Check column types.
-- Check missing values.
-- Identify which variables are useful
-- Save a smaller working dataset
-
 ### 1.2 Data cleaning
-- Keep only released movies.
-- Convert release_date to datetime.
-- Extract release_year and decade.
-- Convert budget, revenue, runtime, vote_average, vote_count, and popularity to numeric format.
-- Remove or flag movies with missing or invalid financial data.
-- Treat budget = 0 and revenue = 0 as missing for financial analysis.
-- Remove movies with runtime <= 0.
-- Apply a minimum vote_count threshold for rating analysis.
-- Remove extreme or unrealistic values if necessary.
-
 ### 1.3 Data transformations
-calculate:
-- profit = revenue - budget
-- roi = profit / budget
-- log_budget = log10(budget)
-- log_revenue = log10(revenue)
-- log_profit = log10(profit), only where profit > 0
-var
-- release_year
-- decade
-- runtime_group
-- budget_group
-- revenue_group
-- rating_group
-- success_category
-
-runtime bins: (see w/ dataset later what's relevant)
-
-- Under 80 minutes
-- 80-100 minutes
-- 100-120 minutes
-- 120-150 minutes
-- Over 150 minutes
-
-year bins groups:
-
-- Before 1980
-- 1980s
-- 1990s
-- 2000s
-- 2010s
-- 2020s
-
-success categories:       //necessary/relevant????
-
-- Blockbuster: high budget and high revenue
-- Surprise hit: low or medium budget and high ROI
-- Money pit: high budget and low or negative ROI
-- Hidden gem: high rating and low or moderate revenue
-- Overhyped: high revenue and low rating
-- Critical and commercial success: high rating and high revenue
-
-### 1.4 Poster feature extraction   //optional for now
-
-- Use poster_path to construct poster URLs.
-- Download poster images for a selected sample
-  - Select a manageable sample, such as:
-    - Top 500 by revenue
-    - Top 500 by rating, with vote_count threshold
-    - Top 500 by ROI
-    - Random sample of 500 movies
-
-Poster features to calculate:
-- brightness
-- contrast
-- saturation
-- colorfulness
-- dominant color
-- warm/cool color tendency
-
-Important limitation:   //thats why its optional for now
-
-Poster analysis is exploratory. It should not be presented as proof that poster design causes revenue or ratings.
-
+### 1.4 Poster feature extraction   </br>//optional for now
 ### 1.5 Basic analysis
 
   #### 1.5.1 General descriptive statistics
 
-  - Number of movies by year bins
-  - Averages (by year bins):
-    - budget
-    - revenue
-    - profit
-    - ROI
-    - rating
-    - runtime
+    - Number of movies by year bins
+    - Averages (by year bins):
+      - budget
+      - revenue
+      - profit
+      - ROI
+      - rating
+      - runtime
 
   #### 1.5.2 Commercial performance
 
@@ -176,26 +97,25 @@ Poster analysis is exploratory. It should not be presented as proof that poster 
 
   #### 1.5.5 Genres and keywords
 
-  - Most common genres overall
-  - Most common genres among:
-    - high-revenue movies
-    - high-ROI movies
-    - highly rated movies
-  - Most frequent keywords among:
-    - top revenue movies
-    - top rated movies
-    - top ROI moviesf
+    - Most common genres overall
+    - Most common genres among:
+      - high-revenue movies
+      - high-ROI movies
+      - highly rated movies
+    - Most frequent keywords among:
+      - top revenue movies
+      - top rated movies
+      - top ROI movies
 
   #### 1.5.6 Poster features     
+    //optional for now
 
-  //optional for now
-
-  - Average brightness by success category
-  - Average saturation by success category
-  - Average contrast by success category
-  - Relationship between poster colorfulness and revenue
-  - Relationship between poster colorfulness and rating
-  - Poster feature differences between blockbusters, hidden gems, and money pits
+    - Average brightness by success category
+    - Average saturation by success category
+    - Average contrast by success category
+    - Relationship between poster colorfulness and revenue
+    - Relationship between poster colorfulness and rating
+    - Poster feature differences between blockbusters, hidden gems, and money pits
 
 ### 1.6 Data visualization
 Plots:
